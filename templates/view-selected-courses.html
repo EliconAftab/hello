@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected Courses</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <style>
+        table td{
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Selected Courses</h1>
+        <table class="table table-bordered mt-4" id="table">
+            <thead>
+                <tr>
+                    <th>
+                        -
+                    </th>
+                    <th>
+                        Monday
+                    </th>
+                    <th> Tuesday</th>
+                    <th> Wednesday</th>
+                    <th> Thursday</th>
+                    <th> Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th> 8:30 AM - 9:50AM</th>
+                    
+                    <td> {% for i in courses_df_a1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_a1[courses_df_a1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_b1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_b1[courses_df_b1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_a2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_a2[courses_df_a2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_c2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_c2[courses_df_c2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_b2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_b2[courses_df_b2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    
+
+                </tr>
+                <tr>
+                    <th> 10:00 AM - 11:20 AM</th>
+                    <td>
+                        {% for i in courses_df_c1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_c1[courses_df_c1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_d1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_d1[courses_df_d1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_e1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_e1[courses_df_e1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_d2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_d2[courses_df_d2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th> 11:30 AM - 12:50 AM</th>
+                    <td id="table">
+                        {% for i in courses_df_f1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_f1[courses_df_f1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_g1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_g1[courses_df_g1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_h2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_h2[courses_df_h2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_f2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_f2[courses_df_f2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_g2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_g2[courses_df_g2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th> 2:00 PM - 3:20 PM</th>
+                    <td>
+                        {% for i in courses_df_i1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_i1[courses_df_i1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_j1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_j1[courses_df_j1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_i2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_i2[courses_df_i2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_k2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_k2[courses_df_k2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_j2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_j2[courses_df_j2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th> 3:30 PM - 4:50 PM</th>
+                    <td>
+                        {% for i in courses_df_k1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_k1[courses_df_k1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_l1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_l1[courses_df_l1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_m1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_m1[courses_df_m1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_l2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_l2[courses_df_l2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_m2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_m2[courses_df_m2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th> 5:00 PM - 6:20 PM</th>
+                    <td>
+                        {% for i in courses_df_h1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_h1[courses_df_h1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_n1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_n1[courses_df_n1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_p1["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_p1[courses_df_p1["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_n2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_n2[courses_df_n2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for i in courses_df_p2["Course Name"] %}
+                        {% if i in selected_courses_array %}
+                        {{ i }} <br>Loc: {{courses_df_p2[courses_df_p2["Course Name"]==i]["Lecture Location"].values[0]}}{%
+                        endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        
+        <button onclick="downloadTableAsExcel()">Download Excel</button>
+    </div>
+    
+
+  <script>
+    function downloadTableAsExcel() {
+      var table = document.getElementById("table");
+      var wb = XLSX.utils.table_to_book(table, {sheet: "Sheet1"});
+      var wbout = XLSX.write(wb, {bookType: 'xlsx', type: 'binary'});
+      var buf = new ArrayBuffer(wbout.length);
+      var view = new Uint8Array(buf);
+      for (var i = 0; i < wbout.length; i++) {
+        view[i] = wbout.charCodeAt(i) & 0xFF;
+      }
+      var blob = new Blob([buf], {type: "application/octet-stream"});
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = "table.xlsx";
+      link.click();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{
+    "builds":[{"src":"aftab_app.py","use": "@vercel/python"}],
+    "routes":[{"src":"/(.*)","dest":"aftab_app.py"}]
+}
